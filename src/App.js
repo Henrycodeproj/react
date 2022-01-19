@@ -33,8 +33,8 @@ function App() {
   
   const showType = (e) =>{
     console.log(e)
-    let sadsd = e.target.value
-    return setHello(sadsd)
+    let input = e.target.value
+    return setHello(input)
   }
 
   return (
