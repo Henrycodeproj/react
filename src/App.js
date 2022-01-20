@@ -5,49 +5,20 @@ import Footer from './footer.js';
 import {useState} from "react";
 
 function App() {
-  const [items, setItems] = useState([
-    {
-        id:1,
-        checked:true,
-        name:'henry'
-    },
-    {
-        id:2,
-        checked:true,
-        name:'jack'
-    }
-  ]);
+  const [userColor, setuserColor] = useState('')
 
-  const [hello, setHello] = useState('');
-
-  const handleClick = (id) =>{
-    const duplicate = items.map((item) => item.id === id ? {...item,checked:!item.checked}:item);
-    setItems(duplicate)
-    //localStorage.setItems('list', JSON.stringify(duplicate));
-  }
-
-  const deleteHandler = (id) => {
-    const ss = items.filter((item) => item.id !== id);
-    setItems(ss)
-  }
-  
-  const showType = (e) =>{
-    console.log(e)
-    let input = e.target.value
-    return setHello(input)
+  const changeColor = (e) =>{
+    setuserColor(e.target.value)
   }
 
   return (
     <div className="App">
       <Header/>
       <Content 
-        items = {items}
-        hello = {hello}
-        showType = {showType}
-        handleClick = {handleClick}
-        deleteHandler = {deleteHandler}
+        userColor={userColor}
+        setuserColor = {setuserColor}
+        changeColor = {changeColor}
       />
-      <Footer length  = {items.length}/>
     </div>
   );
 }

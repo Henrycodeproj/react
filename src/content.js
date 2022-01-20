@@ -1,19 +1,22 @@
-import ItemList from "./itemsList"
-
-const Content = ({items, showType, hello, handleClick, deleteHandler}) => {
+const Content = ({userColor, setuserColor, changeColor}) => {
+    let style = {
+        background:userColor,
+        width:'300px',
+        height:'300px',
+        borderStyle: 'solid'
+    }
     return (
         <main>
-            <ul>
-                {items.map((item) =>
-                <ItemList 
-                key = {item.id}
-                item = {item}
-                handleClick={handleClick}
-                deleteHandler={deleteHandler}
+            <div style = {style}>
+                <h1>{userColor}</h1>
+            </div>
+            <form>
+                <input
+                autofocus
+                placeholder = 'Choose a color'
+                onChange={(e)=>changeColor(e)}
                 />
-            )}
-            </ul>
-            <input onChange ={showType}/>{hello}
+            </form>
         </main>
     )
 }

@@ -1,8 +1,7 @@
 const Header = () => {
     return (
         <header>
-        <h1> hello friends</h1>
-        <h2>hello dood</h2>
+        <h1> React Project and Practice</h1>
         </header>
     )
 }
