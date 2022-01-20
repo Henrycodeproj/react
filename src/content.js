@@ -13,7 +13,7 @@ const Content = ({userColor, setuserColor, changeColor}) => {
             <form>
                 <input
                 autofocus
-                placeholder = 'Choose a color'
+                placeholder = 'Choose a Color'
                 onChange={(e)=>changeColor(e)}
                 />
             </form>
